@@ -26,3 +26,6 @@ A full-stack web application to register blood donors and help people quickly fi
 ```bash
 cd backend
 mvn spring-boot:run
+
+Blood Emergency Web Application – Full-stack project developed using Spring Boot (backend), MySQL (database), and HTML/CSS/JS (frontend).
+Enabled users to register as donors, search blood groups, and request blood in emergencies.
