@@ -1,0 +1,42 @@
+:root {
+  --bg:#f8f6f6; --accent:#dfcab9; --card:#ffffff;
+  --text:#1b1b1f; --muted:#0c0c0c; --radius:16px;
+  --glass:rgba(255,255,255,0.65);
+}
+
+* { box-sizing:border-box; }
+body {
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  margin:0;
+  background: linear-gradient(rgba(89,21,16,0.7), rgba(217,182,223,0.7)), url("img/background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+}
+
+header { display:flex; align-items:center; justify-content:space-between; padding:20px 40px; background:var(--glass); backdrop-filter:blur(6px); position:sticky; top:0; border-bottom:1px solid rgba(0,0,0,0.08); z-index:10; }
+.logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; }
+nav button { background:none; border:none; color:var(--text); font-size:16px; margin:0 10px; cursor:pointer; font-weight:500; }
+nav button.active { color:var(--accent); text-decoration:underline; }
+
+main { padding:40px 20px; max-width:1100px; margin:auto; }
+section { display:none; animation:fade .4s ease-in-out; }
+section.active { display:block; }
+
+@keyframes fade { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:none;} }
+
+.btn { background:var(--accent); color:#090909; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+.card { background:var(--card); padding:24px; border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.06); text-align:center; }
+.services { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
+.muted { color:var(--muted); }
+
+input,select { width:100%; padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); }
+label { display:block; font-size:14px; margin-top:10px; color:var(--muted); }
+
+footer { text-align:center; color:var(--muted); padding:20px; }
+.home-hero { display:grid; grid-template-columns:1fr 420px; align-items:center; gap:30px; margin-top:20px; }
+.doctor { width:100%; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.12); object-fit:cover; }
+
+@media(max-width:850px) { .home-hero { grid-template-columns:1fr; } }
+
+.delete-btn { background:#ff4d4d; color:white; border:none; padding:6px 12px; border-radius:8px; cursor:pointer; }
+.login-box { max-width:400px; margin:40px auto; padding:24px; background:var(--card); border-radius:16px; box-shadow:0 8px 30px rgba(27,5,225,0.08); text-align:center; }

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blood Emergency — Donate & Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">🩸 Blood Emergency</div>
+    <nav>
+        <button class="active" onclick="showPage('home')">Home</button>
+        <button onclick="showPage('register')">Register</button>
+        <button onclick="showPage('search')">Search</button>
+        <button onclick="showPage('adminLogin')">Admin</button>
+    </nav>
+</header>
+
+<main>
+    <!-- HOME -->
+    <section id="home" class="active">
+        <div class="home-hero">
+            <div>
+                <h1>Save Lives by Donating Blood</h1>
+                <p class="muted">Join our community and become a registered donor. Your blood can give someone another chance at life.</p>
+                <button class="btn" onclick="showPage('register')">Register Now</button>
+
+                <div class="services">
+                    <div class="card">
+                        <div style="font-size:30px">🩸</div>
+                        <h3>Blood Donors</h3>
+                        <p class="muted">Find registered donors nearby</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-size:30px">🩺</div>
+                        <h3>Donation Drives</h3>
+                        <p class="muted">Organize or join donation camps</p>
+                    </div>
+                    <div class="card">
+                        <div style="font-size:30px">🧬</div>
+                        <h3>Admin Panel</h3>
+                        <p class="muted">Manage donors & requests</p>
+                    </div>
+                </div>
+            </div>
+            <img class="doctor" src="img/doc.jpg" alt="Doctor">
+        </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="register">
+        <h2>Register as Donor</h2>
+        <form id="regForm">
+            <label>Full Name<input name="name" required></label>
+            <label>Phone Number<input name="phone" required></label>
+            <label>Email<input name="email" type="email"></label>
+            <label>Blood Group
+                <select name="blood" required>
+                    <option value="">Select</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+                </select>
+            </label>
+            <label>City<input name="city"></label>
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- SEARCH -->
+    <section id="search">
+        <h2>Search Donors</h2>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <select id="filterBlood">
+                <option value="">All Blood Types</option>
+                <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+            </select>
+            <input id="filterCity" placeholder="City">
+            <button class="btn" onclick="applyFilter()">Filter</button>
+        </div>
+        <div id="results"></div>
+    </section>
+
+    <!-- ADMIN LOGIN -->
+    <section id="adminLogin">
+        <div class="login-box">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label>Username<input id="adminUser" required></label>
+                <label>Password<input id="adminPass" type="password" required></label>
+                <button type="submit" class="btn" style="margin-top:10px;">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ADMIN PANEL -->
+    <section id="admin">
+        <h2>Admin Panel</h2>
+        <button class="btn" style="background:#6aa3c9" onclick="logoutAdmin()">Logout</button>
+        <div style="margin-bottom:20px;">
+            <h3>Add Donor (Admin)</h3>
+            <form id="adminAddForm">
+                <label>Name<input name="name" required></label>
+                <label>Phone<input name="phone" required></label>
+                <label>Email<input name="email"></label>
+                <label>Blood Group
+                    <select name="blood" required>
+                        <option value="">Select</option>
+                        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                        <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+                    </select>
+                </label>
+                <label>City<input name="city"></label>
+                <button type="submit" class="btn" style="margin-top:10px;">Add Donor</button>
+            </form>
+        </div>
+
+        <h3>All Donors</h3>
+        <div id="adminList"></div>
+    </section>
+</main>
+
+<footer>© <span id="year"></span> Blood Emergency</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
