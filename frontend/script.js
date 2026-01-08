@@ -1,5 +1,5 @@
 // ===== CONFIG =====
-const API = "http://localhost:8080/api/donors";
+const API = "https://blood-emergency-backend.onrender.com";
 const ADMIN_USER = "mmk_2003";
 const ADMIN_PASS = "muthu.2003";
 
