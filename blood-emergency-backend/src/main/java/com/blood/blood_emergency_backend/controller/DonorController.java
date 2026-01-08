@@ -9,6 +9,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/donors")
 @CrossOrigin(origins = "*")
+
 public class DonorController {
 
     private final DonorService service;
@@ -35,15 +36,8 @@ public class DonorController {
     @GetMapping("/filter")
     public List<Donor> filter(
             @RequestParam(required = false) String blood,
-            @RequestParam(required = false) String city) {
+            @RequestParam(required = false) String city
+    ) {
         return service.filter(blood, city);
     }
-    @GetMapping("/load-json")
-    public List<Donor> loadJson() throws Exception {
-        var resource = new org.springframework.core.io.ClassPathResource("donors.json");
-        var json = new String(resource.getInputStream().readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
-        var mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-        return mapper.readValue(json, new com.fasterxml.jackson.core.type.TypeReference<List<Donor>>() {});
-    }
-
 }

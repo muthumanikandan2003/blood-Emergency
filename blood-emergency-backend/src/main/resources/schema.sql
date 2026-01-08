@@ -16,4 +16,3 @@ CREATE TABLE IF NOT EXISTS donor (
 INSERT INTO donor (name, phone, email, blood, city) VALUES
 ('Ravi Kumar', '9876543210', 'ravi@gmail.com', 'A+', 'Chennai'),
 ('Anita Sharma', '9123456780', 'anita@gmail.com', 'O-', 'Bangalore');
-c
